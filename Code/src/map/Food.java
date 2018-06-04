@@ -17,14 +17,10 @@ public class Food extends JPanel
 {
 	
 	
-    /**
-     *
-     */
-    protected int posX;
+    
+   
 
-    /**
-     *
-     */
+    protected int posX;
     protected int posY;
 	
 	private Color color = new Color(211, 161, 0);
