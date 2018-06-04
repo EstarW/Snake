@@ -5,6 +5,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -93,8 +95,11 @@ public class Option extends JDialog implements ActionListener
 				parent.replay();
                                 
 			}
+                    this.parent.getThread().resume();
 		});
 		
+                
+                
 		block4.setLayout(new FlowLayout());
 		block4.add(but);
 		
@@ -108,7 +113,7 @@ public class Option extends JDialog implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-            parent.getSerpent().setJouer(false);
+            parent.getThread().suspend();
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}

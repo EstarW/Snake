@@ -40,7 +40,6 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	private int score = 0;
 	private JPanel pc = new JPanel();
         
-        private boolean jouer;
 	
 	/**
 	 * Crée un nouveau serpent
@@ -52,7 +51,6 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		this.tete = tete;
 		color = new Color(0,180,0);
                 
-                jouer = true;
 		
 		for(int i=0;i<nbrQueu;i++)//Ajoute le corp
 		{
@@ -86,7 +84,6 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		color = new Color(0,180,0);
 		score = 0;
                 
-                jouer=true;
 		
 		pc.removeAll();
 		pc.add(new JLabel("Score: "));
@@ -164,7 +161,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	 */
 	public void run()
 	{
-		while(jouer)
+		while(true)
 		{
 			if(statue == PLAY) //Bouge le serpent s'il est vivant
 			{
@@ -232,12 +229,5 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		return this.pc;
 	}
 
-    public boolean isJouer() {
-        return jouer;
-    }
-
-    public void setJouer(boolean jouer) {
-        this.jouer = jouer;
-    }
         
 }

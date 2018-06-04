@@ -33,6 +33,7 @@ public class Main extends JFrame
 	private Block tete;
 	private Snake serpent;
 	private JPanel mapPanel = new JPanel();
+        private Thread thread;
 	
    
     public static void main(String[] args)
@@ -75,7 +76,8 @@ public class Main extends JFrame
 			tete.setColor(new Color(0,20,0));
 			serpent = new Snake(tete, Data.SNAKESIZE);
 			
-			new Thread(serpent).start();
+                        thread = new Thread(serpent);
+			thread.start();
 			this.addKeyListener(serpent);
 			
 		//COMPTEUR
@@ -119,5 +121,10 @@ public class Main extends JFrame
     public Snake getSerpent() {
         return serpent;
     }
+
+    public Thread getThread() {
+        return thread;
+    }
+    
        
 }
