@@ -21,7 +21,7 @@ import snake0.Snake;
 
 /**
  * Class Main du Snake
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 
