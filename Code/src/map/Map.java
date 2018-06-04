@@ -33,7 +33,10 @@ public class Map extends JPanel
 		this.setPreferredSize(new Dimension(sizeX, sizeY));
 		this.setLayout(null);
 	}
-	
+	/**
+         * permet de modifier la couleur de fond et des bordures de la map
+         * @param g 
+         */
 	public void paintComponent(Graphics g)
 	{
 		g.setColor(Color.WHITE);
