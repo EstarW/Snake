@@ -13,7 +13,7 @@ import map.Food;
 
 /**
  * Le serpent
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 public class Snake extends JPanel implements Runnable, KeyListener
