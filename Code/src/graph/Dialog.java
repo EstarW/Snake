@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  * Classe proposant des methodes static pour faire des boites de dialog
- * @author np036390
+ * @author Alexandre, Damien, Elie
  */
 public class Dialog
 {
