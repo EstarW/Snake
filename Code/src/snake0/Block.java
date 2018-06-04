@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 /**
  * Class block, le block du serpent
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 public class Block extends JPanel
