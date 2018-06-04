@@ -27,7 +27,7 @@ public class Food extends JPanel
      */
     protected int posY;
 	
-	private Color color = new Color(200,0,0);
+	private Color color = new Color(211, 161, 0);
 	
 	/**
 	 * Crée une nouvelle food pour le serpent
@@ -50,7 +50,7 @@ public class Food extends JPanel
 	 */
 	public void moveIt(int posX, int posY)
 	{
-		color = new Color(200,0,0);
+		color = new Color(211, 161, 0);
 		
 		this.posX = posX;
 		this.posY = posY;
