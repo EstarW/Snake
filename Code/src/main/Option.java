@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 
 import snake0.Data;
+import static snake0.Data.NBRCASEX;
+import static snake0.Data.NBRCASEY;
 import static snake0.Data.SNAKESPEED;
 
 /**
@@ -28,8 +30,8 @@ public class Option extends JDialog implements ActionListener
 	private final Option before = this;
 	
 	private JSlider speed = new JSlider(0, 100, SNAKESPEED);
-	private JSlider nbrCaseX = new JSlider(10, 100, 30);
-	private JSlider nbrCaseY = new JSlider(10, 100, 30);
+	private JSlider nbrCaseX = new JSlider(10, 100, NBRCASEY);
+	private JSlider nbrCaseY = new JSlider(10, 100, NBRCASEX);
 	private JButton but = new JButton("Valider");
 	
 	private JPanel block1 = new JPanel();
