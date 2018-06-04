@@ -115,5 +115,9 @@ public class Main extends JFrame
 		this.pack();
 		this.setLocationRelativeTo(null);
 	}
+
+    public Snake getSerpent() {
+        return serpent;
+    }
        
 }
