@@ -85,6 +85,8 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		this.tete = tete;
 		color = new Color(0,180,0);
 		score = 0;
+                
+                jouer=true;
 		
 		pc.removeAll();
 		pc.add(new JLabel("Score: "));
