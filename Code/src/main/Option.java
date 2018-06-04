@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 
 import snake0.Data;
+import static snake0.Data.SNAKESPEED;
 
 /**
  * Boite de dialogue Option
@@ -26,7 +27,7 @@ public class Option extends JDialog implements ActionListener
 	private Main parent;
 	private final Option before = this;
 	
-	private JSlider speed = new JSlider(0, 100, 70);
+	private JSlider speed = new JSlider(0, 100, SNAKESPEED);
 	private JSlider nbrCaseX = new JSlider(10, 100, 30);
 	private JSlider nbrCaseY = new JSlider(10, 100, 30);
 	private JButton but = new JButton("Valider");
