@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 /**
  * Carte sur laquelle le serpent se déplace
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 public class Map extends JPanel
