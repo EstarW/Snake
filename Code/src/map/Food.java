@@ -10,7 +10,7 @@ import snake0.Data;
 
 /**
  * Nouriture pour le serpent
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 public class Food extends JPanel
