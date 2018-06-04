@@ -4,7 +4,7 @@ import map.Map;
 
 /**
  * Class pour stocker toutes les données relatives au jeu
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 public class Data
