@@ -106,6 +106,7 @@ public class Option extends JDialog implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
+            parent.getSerpent().setJouer(false);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
