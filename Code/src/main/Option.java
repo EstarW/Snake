@@ -16,7 +16,7 @@ import snake0.Data;
 
 /**
  * Boite de dialogue Option
- * @author np036390
+ * @author Alexandre,Damien,Elie
  *
  */
 public class Option extends JDialog implements ActionListener
