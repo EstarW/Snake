@@ -15,15 +15,10 @@ public class Block extends JPanel
 {
 	
 	
-    /**
-     *
-     */
-    protected int posX;
-
-    /**
-     *
-     */
-    protected int posY;
+    
+    
+        protected int posX;
+        protected int posY;
 	private Block ancre;
 	private Color color = Color.WHITE;
 	
