@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
+import main.Main;
+import snake0.Block;
 
 import snake0.Data;
 
@@ -18,7 +20,7 @@ public class Food extends JPanel
 	
 	
     
-   
+   private Main parent;
 
     protected int posX;
     protected int posY;
@@ -30,11 +32,14 @@ public class Food extends JPanel
 	 * @param posX position horizontal de l'objectif
 	 * @param posY position vertical de l'objectif
 	 */
-	public Food(int posX, int posY)
+	public Food(int posX, int posY, Main _parent)
 	{
 		this.setSize(new Dimension(Data.CASESIZE, Data.CASESIZE));
+                
 		this.setLocation(posX*Data.CASESIZE, posY*Data.CASESIZE);
 		
+                parent=_parent;
+                
 		this.posX = posX;
 		this.posY = posY;
 	}
@@ -44,14 +49,20 @@ public class Food extends JPanel
 	 * @param posX position horizontal de l'objectif
 	 * @param posY position vertical de l'objectif
 	 */
-	public void moveIt(int posX, int posY)
+	public void moveIt()
 	{
-		color = new Color(211, 161, 0);
-		
-		this.posX = posX;
-		this.posY = posY;
-		
-		this.setLocation(posX*Data.CASESIZE, posY*Data.CASESIZE);
+            //color = new Color(211, 161, 0);
+            int newX = (int)(Math.random()*Data.NBRCASEX);
+            int newY = (int)(Math.random()*Data.NBRCASEY);
+            
+            while(!TestCorp(newX,newY)){
+                newX = (int)(Math.random()*Data.NBRCASEX);
+                newY = (int)(Math.random()*Data.NBRCASEY);
+            }
+            
+            this.posX=newX;
+            this.posY=newY;
+            this.setLocation(posX*Data.CASESIZE, posY*Data.CASESIZE);
 	}
 	
 	public void paintComponent(Graphics g)
@@ -63,6 +74,16 @@ public class Food extends JPanel
 		g.fillOval(Data.CASESIZE/6+1, Data.CASESIZE/6+1, Data.CASESIZE-(Data.CASESIZE/3)-3, Data.CASESIZE-(Data.CASESIZE/3)-3);
 	}
 	
+        public boolean TestCorp(int i, int j){
+            boolean res=true;
+            for (Block b : parent.getSerpent().getQueu()){
+                if ( i == b.getX() && j == b.getY()){
+                    res=false;
+                }
+            }
+            return res;
+        }
+        
 	/**
 	 * @return position horizontal de la food
 	 */

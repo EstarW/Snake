@@ -80,7 +80,7 @@ public class Main extends JFrame
 		
 			tete = new Block((Data.NBRCASEX-1)/2, (Data.NBRCASEY-1)/2);
 			tete.setColor(new Color(0,20,0));
-			serpent = new Snake(tete, Data.SNAKESIZE);
+			serpent = new Snake(tete, Data.SNAKESIZE,this);
 			
                         thread = new Thread(serpent);
 			thread.start();

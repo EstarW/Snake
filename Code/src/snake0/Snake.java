@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import graph.Dialog;
+import main.Main;
 import map.Food;
 
 /**
@@ -26,7 +27,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
     public final static short PLAY = 0;
     public final static short DEAD = 1;
     
-	
+	private Main parent;
 	private Block tete;
 	private ArrayList<Block> queue = new ArrayList<Block>();
 	
@@ -36,7 +37,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	private Color color;
 	private short statue = PLAY;
 	
-	private Food objectif = new Food((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY));
+	private Food objectif;
 	private int score = 0;
 	private JPanel pc = new JPanel();
         
@@ -46,12 +47,12 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	 * @param tete le block représentant sa tête
 	 * @param nbrQueu le nombre de block en plus de sa tête
 	 */
-	public Snake(Block tete, int nbrQueu)
+	public Snake(Block tete, int nbrQueu, Main _parent)
 	{
 		this.tete = tete;
 		color = new Color(0,180,0);
-                
-		
+                parent=_parent;
+		objectif = new Food((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY), parent);
 		for(int i=0;i<nbrQueu;i++)//Ajoute le corp
 		{
 			if(i==0)
@@ -100,7 +101,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
 			queue.get(i).setColor(color);
 		}
 		
-		objectif = new Food((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY));
+		objectif = new Food((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY), parent);
 		
 		Data.MAP.add(tete);
 		Data.MAP.add(queue.toArray(new Block[queue.size()]));
@@ -148,7 +149,8 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		
 		if(tete.posX == objectif.getPosX() && tete.posY == objectif.getPosY()) //Si le serpent ramasse une food
 		{
-			objectif.moveIt((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY));
+                    
+			objectif.moveIt();
 			this.addOne();
 			score++;
 			((JLabel)pc.getComponent(1)).setText(String.valueOf(score));
@@ -228,6 +230,15 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	{
 		return this.pc;
 	}
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+    
 
         
 }
