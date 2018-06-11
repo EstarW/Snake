@@ -100,8 +100,11 @@ public class Snake extends JPanel implements Runnable, KeyListener
 			queue.get(i).setColor(color);
 		}
 		
+                int i,j;
+                
 		objectif = new Food((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY));
 		
+                
 		Data.MAP.add(tete);
 		Data.MAP.add(queue.toArray(new Block[queue.size()]));
 		Data.MAP.add(objectif);

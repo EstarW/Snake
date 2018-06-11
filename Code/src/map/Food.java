@@ -31,8 +31,10 @@ public class Food extends JPanel
 	 * @param posY position vertical de l'objectif
 	 */
 	public Food(int posX, int posY)
-	{
+	{       
 		this.setSize(new Dimension(Data.CASESIZE, Data.CASESIZE));
+                
+                
 		this.setLocation(posX*Data.CASESIZE, posY*Data.CASESIZE);
 		
 		this.posX = posX;
