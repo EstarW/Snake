@@ -65,6 +65,7 @@ public class Food extends JPanel
             this.setLocation(posX*Data.CASESIZE, posY*Data.CASESIZE);
 	}
 	
+   @Override
 	public void paintComponent(Graphics g)
 	{
 		g.setColor(Color.BLACK);

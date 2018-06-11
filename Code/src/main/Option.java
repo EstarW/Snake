@@ -88,7 +88,7 @@ public class Option extends JDialog implements ActionListener
             {
                 Data.NBRCASEX = (short) before.nbrCaseX.getValue();
                 Data.NBRCASEY = (short) before.nbrCaseY.getValue();
-                Data.SNAKESPEED = before.speed.getValue();
+                Data.SNAKESPEED = speed.getValue();
                 parent.getThread().resume();
 
                 before.dispose();
