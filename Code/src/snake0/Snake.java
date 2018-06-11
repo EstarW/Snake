@@ -145,6 +145,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
 			{
 				statue = DEAD; //Le serpent meurt
 				Dialog.danger(null, "Perdu !");
+                                parent.replay();
 			}
 		
 		if(tete.posX == objectif.getPosX() && tete.posY == objectif.getPosY()) //Si le serpent ramasse une food
