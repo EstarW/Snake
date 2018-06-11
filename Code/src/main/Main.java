@@ -54,11 +54,14 @@ public class Main extends JFrame
 			JMenuBar mb = new JMenuBar();
 				JMenu jeu = new JMenu("Jeu");
 					JMenuItem option = new JMenuItem("Options");
+                                        JMenuItem jouer = new JMenuItem("Jouer");
 
 			
 			option.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
+                        jouer.addActionListener(new Jouer(this));
 			option.addActionListener(new Option(this));
 			
+                        jeu.add(jouer);
 			jeu.add(option);
 
 			mb.add(jeu);

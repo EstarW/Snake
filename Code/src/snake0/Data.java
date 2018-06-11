@@ -11,7 +11,7 @@ public class Data
 {
 
     
-    public static short CASESIZE = 10;
+    public static short CASESIZE = 20;
     public static short SNAKESIZE = 3;
     public static short NBRCASEX = 30;
     public static short NBRCASEY = 30;
