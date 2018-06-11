@@ -22,7 +22,9 @@ public class Quitter implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        parent.getThread().stop();
         parent.dispose();
+        
     }
     
 }
