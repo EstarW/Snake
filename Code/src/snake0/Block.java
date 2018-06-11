@@ -32,6 +32,7 @@ public class Block extends JPanel
 		this.posX = ancre.posX+1;
 		this.posY = ancre.posY;
 		
+                
 		this.setSize(new Dimension(Data.CASESIZE, Data.CASESIZE));
 		this.setLocation(posX*Data.CASESIZE, posY*Data.CASESIZE);
 	}
