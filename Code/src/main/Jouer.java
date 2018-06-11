@@ -25,6 +25,7 @@ public class Jouer implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         parent.replay();
+        
     }
     
 }

@@ -55,14 +55,17 @@ public class Main extends JFrame
 				JMenu jeu = new JMenu("Jeu");
 					JMenuItem option = new JMenuItem("Options");
                                         JMenuItem jouer = new JMenuItem("Jouer");
+                                        JMenuItem quitter = new JMenuItem("Quitter");
 
 			
 			option.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
                         jouer.addActionListener(new Jouer(this));
 			option.addActionListener(new Option(this));
+                        quitter.addActionListener(new Quitter(this));
 			
                         jeu.add(jouer);
 			jeu.add(option);
+                        jeu.add(quitter);
 
 			mb.add(jeu);
 			
