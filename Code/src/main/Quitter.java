@@ -7,25 +7,22 @@ package main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JDialog;
 
 /**
  *
  * @author dj715494
  */
-public class Jouer implements ActionListener{
-    
+public class Quitter implements ActionListener{
+
     private Main parent;
 
-    public Jouer(Main parent) {
+    public Quitter(Main parent) {
         this.parent = parent;
     }
     
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        parent.replay();
-        
+        parent.dispose();
     }
     
 }
