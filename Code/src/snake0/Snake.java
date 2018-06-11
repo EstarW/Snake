@@ -28,7 +28,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
     
 	
 	private Block tete;
-	private ArrayList<Block> queu = new ArrayList<Block>();
+	private ArrayList<Block> queue = new ArrayList<Block>();
 	
 	private short dir = WEST;
 	private short dirAv = WEST;
@@ -55,16 +55,16 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		for(int i=0;i<nbrQueu;i++)//Ajoute le corp
 		{
 			if(i==0)
-				queu.add(new Block(tete));
-			else queu.add(new Block(queu.get(i-1)));
+				queue.add(new Block(tete));
+			else queue.add(new Block(queue.get(i-1)));
 			
-			queu.get(i).setColor(color);
+			queue.get(i).setColor(color);
 		}
 		
 		//Ajouter a la map
 		
 		Data.MAP.add(tete);
-		Data.MAP.add(queu.toArray(new Block[queu.size()]));
+		Data.MAP.add(queue.toArray(new Block[queue.size()]));
 		Data.MAP.add(objectif);
 		
 		//Ajouter le panel du score a l'ecran
@@ -89,21 +89,21 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		pc.add(new JLabel("Score: "));
 		pc.add(new JLabel(String.valueOf(score)));
 		
-		queu.removeAll(queu);
+		queue.removeAll(queue);
 		
 		for(int i=0;i<nbrQueu;i++) //Crée le corps du serpent
 		{
 			if(i==0)
-				queu.add(new Block(tete));
-			else queu.add(new Block(queu.get(i-1)));
+				queue.add(new Block(tete));
+			else queue.add(new Block(queue.get(i-1)));
 			
-			queu.get(i).setColor(color);
+			queue.get(i).setColor(color);
 		}
 		
 		objectif = new Food((int)(Math.random()*Data.NBRCASEX), (int)(Math.random()*Data.NBRCASEY));
 		
 		Data.MAP.add(tete);
-		Data.MAP.add(queu.toArray(new Block[queu.size()]));
+		Data.MAP.add(queue.toArray(new Block[queue.size()]));
 		Data.MAP.add(objectif);
 		
 		dir = WEST;
@@ -116,10 +116,10 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	 */
 	public void addOne()
 	{
-		Block b = new Block(queu.get(queu.size()-1));
+		Block b = new Block(queue.get(queue.size()-1));
 		b.setColor(color);
 		
-		queu.add(b);
+		queue.add(b);
 		Data.MAP.add(b);
 	}
 	
@@ -128,8 +128,8 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	 */
 	public void avance()
 	{
-		for(int k=queu.size()-1;k>=0;k--) //Remplacer le Block n-1 par celui n
-			queu.get(k).avance();
+		for(int k=queue.size()-1;k>=0;k--) //Remplacer le Block n-1 par celui n
+			queue.get(k).avance();
 		
 		if(dir+dirAv != 0) //Ne peut pas se diriger dans le sens contraire
 		{
@@ -139,8 +139,8 @@ public class Snake extends JPanel implements Runnable, KeyListener
 		else
 			tete.avance((short) (dirAv)); //On fait avancer la tete dans la direction dir
 		
-		for(int k=0;k<queu.size();k++)
-			if(queu.get(k).getLocation().equals(tete.getLocation())) //Si la tete touche un autre block du serpent, on perd
+		for(int k=0;k<queue.size();k++)
+			if(queue.get(k).getLocation().equals(tete.getLocation())) //Si la tete touche un autre block du serpent, on perd
 			{
 				statue = DEAD; //Le serpent meurt
 				Dialog.danger(null, "Perdu !");
@@ -197,7 +197,7 @@ public class Snake extends JPanel implements Runnable, KeyListener
 	 */
 	public ArrayList<Block> getQueu()
 	{
-		return queu;
+		return queue;
 	}
 	
 	/**
