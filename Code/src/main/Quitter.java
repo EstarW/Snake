@@ -9,23 +9,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
+ * permet de quitter le jeu en fermant tout les processus du jeu
  *
  * @author dj715494
  */
-public class Quitter implements ActionListener{
+public class Quitter implements ActionListener {
 
     private Main parent;
 
     public Quitter(Main parent) {
         this.parent = parent;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         parent.getThread().resume();
         parent.getThread().stop();
         parent.dispose();
-        
+
     }
-    
+
 }

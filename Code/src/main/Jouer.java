@@ -7,26 +7,33 @@ package main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JDialog;
 
 /**
- *
+ * Permet de relancer une partie
  * @author dj715494
  */
-public class Jouer implements ActionListener{
-    
+public class Jouer implements ActionListener {
+
     private Main parent;
 
+    
+    /**
+     * rinitialise parent
+     * @param parent 
+     */
     public Jouer(Main parent) {
         this.parent = parent;
     }
-    
 
+    /**
+     * permet de relancé le thread
+     * @param e 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         parent.replay();
         parent.getThread().resume();
-        
+
     }
-    
+
 }
